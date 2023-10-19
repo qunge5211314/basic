@@ -4,10 +4,19 @@ create table if not exists sys_role
     is_valid    boolean  not null default true comment '是否有效记录',
     create_time datetime not null default CURRENT_TIMESTAMP comment '记录创建时间',
     update_time datetime not null default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP comment '记录更新时间',
-    name        varchar(32) not null unique comment '角色名',
+    parent_id   bigint,
+    tree_id     int      not null,
+    lft         int      not null,
+    rgt         int      not null,
+    depth       int      not null,
+    role_name varchar(32) comment '角色名',
     index (is_valid),
     index (create_time),
     index (update_time),
-    index (name)
-    ) engine = innodb,
-    charset = utf8, comment ='角色表';
+    index (parent_id),
+    index (tree_id),
+    index (lft),
+    index (rgt),
+    index(role_name)
+) engine = innodb,
+  charset = utf8, comment ='基础层级树建表语句';

@@ -15,6 +15,6 @@ create table if not exists sys_user
     index (update_time),
     index (username, pwd),
     index (identity),
-    index (pwd),
+    index (pwd)
 ) engine = innodb,
   charset = utf8, comment ='用户表';

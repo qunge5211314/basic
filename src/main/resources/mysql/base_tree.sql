@@ -1,4 +1,4 @@
-create table if not exists base
+create table if not exists base_tree
 (
     id          bigint   not null primary key auto_increment comment '主键id',
     is_valid    boolean  not null default true comment '是否有效记录',
