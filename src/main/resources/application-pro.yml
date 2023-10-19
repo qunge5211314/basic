@@ -1,0 +1,46 @@
+#debug: true
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://172.27.106.69:3306/hq_test
+    username: "root"
+    password: "!QAZxsw2#EDC"
+    druid:
+      stat-view-servlet:
+        enabled: false
+      initial-size: 5 #连接池初始化大小
+      min-idle: 10 #最小空闲连接数
+      max-active: 20 #最大连接数
+      max-wait: 3000
+
+
+
+  mail:
+    username: hanqun@troila.com
+    password: Love-5201314
+    host: smtp.troila.com
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+
+    database: MYSQL
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+  redis:
+    database: 0
+    host: 172.27.106.3
+    port: 6379
+    password: troila

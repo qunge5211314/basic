@@ -1,0 +1,36 @@
+#debug: true
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://117.78.10.247:42843/hq_test
+    username: "root"
+    password: "hzxy2022@!QAZXSW@"
+    druid:
+      stat-view-servlet:
+        login-username: druid
+        login-password: druid
+        enabled: true
+      initial-size: 5 #连接池初始化大小
+      min-idle: 10 #最小空闲连接数
+      max-active: 20 #最大连接数
+      web-stat-filter:
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
+      max-wait: 3000
+      filters: stat, wall, logback
+
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: troila
+
+#mybatis的相关配置
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml

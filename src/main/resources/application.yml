@@ -1,0 +1,52 @@
+spring:
+  profiles:
+    active: dev
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+  application:
+    name: basic
+server:
+  servlet:
+    context-path: /basic
+
+cors:
+  allow:
+    origin: "*"
+    credentials: true
+    header: "*"
+    method: "*"
+  register:
+    pattern: "/**"
+
+redis:
+  key:
+    prefix:
+      register: "register-"
+      updatePassword: "updatePassword-"
+
+basic:
+  user:
+    authentication:
+      code:
+        length: 6
+        originString: "0123456789"
+        duration: 600
+
+  response:
+    message:
+      success: 成功
+      noHandler: 接口不存在
+      methodError: 请求方法错误
+      missParam: 不能为空
+      serverError: 服务器异常，请稍后再试
+      authCodeExist: 验证码已发送，有效期10分钟，请勿重复操作
+      existEmailOrName: 已存在的用户名
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
