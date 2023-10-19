@@ -44,3 +44,6 @@ spring:
     host: 172.27.106.3
     port: 6379
     password: troila
+
+swagger:
+  enable: false

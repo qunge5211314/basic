@@ -8,9 +8,9 @@ spring:
       add-mappings: false
   application:
     name: basic
-server:
-  servlet:
-    context-path: /basic
+#server:
+#  servlet:
+#    context-path: /basic
 
 cors:
   allow:
