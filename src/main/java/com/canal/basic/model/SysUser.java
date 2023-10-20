@@ -10,7 +10,9 @@ import java.io.Serializable;
 @SuperBuilder
 public class SysUser extends BaseModel implements Serializable {
 
-    private String name;
+    private String userName;
+
+    private String identity;
 
     private String email;
 
@@ -18,4 +20,7 @@ public class SysUser extends BaseModel implements Serializable {
 
     private Boolean gender;
 
+    private Boolean state;
+
+    private Boolean isSys;
 }

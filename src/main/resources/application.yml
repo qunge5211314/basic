@@ -21,11 +21,6 @@ cors:
   register:
     pattern: "/**"
 
-redis:
-  key:
-    prefix:
-      register: "register-"
-      updatePassword: "updatePassword-"
 
 basic:
   user:
@@ -34,6 +29,9 @@ basic:
         length: 6
         originString: "0123456789"
         duration: 600
+    default:
+      pwd:
+        "123456"
 
   response:
     message:
