@@ -8,9 +8,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 @Configuration
-public class CorsConfig {
+public class CorsConfig extends WebMvcConfigurationSupport {
 
     @Value("${cors.allow.origin}")
     private String allowOrigin;
@@ -55,5 +57,11 @@ public class CorsConfig {
         corsConfiguration.addAllowedMethod(allowMethod);
         urlBasedCorsConfigurationSource.registerCorsConfiguration(registerPattern, corsConfiguration);
         return new CorsFilter(urlBasedCorsConfigurationSource);
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("doc.html").addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 }

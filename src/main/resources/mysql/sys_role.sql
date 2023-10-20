@@ -19,4 +19,4 @@ create table if not exists sys_role
     index (rgt),
     index(role_name)
 ) engine = innodb,
-  charset = utf8, comment ='基础层级树建表语句';
+  charset = utf8, comment ='角色语句';

@@ -38,8 +38,9 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("基础服务")
                 .description("基础服务")
-                .contact(new Contact("tdt-authority","",""))
-                .version("v2.0")
+                .termsOfServiceUrl("")
+                .contact(new Contact("JustinHan","","justinhan.fr.chn@gmail.com"))
+                .version("v1.0")
                 .build();
     }
 }

@@ -10,7 +10,6 @@ import io.swagger.annotations.ApiModelProperty;
 @Data
 @SuperBuilder
 public abstract class BaseModel implements Serializable {
-    @ApiModelProperty(value = "用户id")
     private Long id;
 
     private Boolean isValid = true;

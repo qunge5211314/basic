@@ -6,18 +6,16 @@ import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
-
+@Data
 @SuperBuilder
-public class User extends BaseModel implements Serializable {
+public class SysUser extends BaseModel implements Serializable {
 
     private String name;
 
     private String email;
 
-    @JsonIgnore
-    private String password;
+    private String pwd;
 
     private Boolean gender;
 
-    private String portrait;
 }

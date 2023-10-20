@@ -2,10 +2,10 @@ package com.canal.basic.exception;
 
 import com.canal.basic.response.ResponseCode;
 
-public class AuthCodeExistException extends ApiException {
+public class DataConflictException extends ApiException {
     private final Long code = ResponseCode.CONFLICT.getCode();
 
-    public AuthCodeExistException(String message) {
+    public DataConflictException(String message) {
         super(message);
     }
 

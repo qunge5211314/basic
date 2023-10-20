@@ -8,9 +8,9 @@ spring:
       add-mappings: false
   application:
     name: basic
-#server:
-#  servlet:
-#    context-path: /basic
+server:
+  servlet:
+    context-path: /basic
 
 cors:
   allow:
@@ -42,8 +42,6 @@ basic:
       methodError: 请求方法错误
       missParam: 不能为空
       serverError: 服务器异常，请稍后再试
-      authCodeExist: 验证码已发送，有效期10分钟，请勿重复操作
-      existEmailOrName: 已存在的用户名
 
 pagehelper:
   helperDialect: mysql

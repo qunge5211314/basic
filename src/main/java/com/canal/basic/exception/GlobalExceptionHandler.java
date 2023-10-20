@@ -31,15 +31,11 @@ public class GlobalExceptionHandler {
         return ApiResponse.fail(e.getCode(), e.getMessage());
     }
 
-    @ExceptionHandler(AuthCodeExistException.class)
-    public ApiResponse authCodeExistExceptionHandler(AuthCodeExistException e) {
+    @ExceptionHandler(DataConflictException.class)
+    public ApiResponse authCodeExistExceptionHandler(DataConflictException e) {
         return ApiResponse.fail(e.getCode(), e.getMessage());
     }
 
-    @ExceptionHandler(ExistUserException.class)
-    public ApiResponse existUserExceptionHandler(ExistUserException e) {
-        return ApiResponse.fail(e.getCode(), e.getMessage());
-    }
 
     @ExceptionHandler(NoHandlerFoundException.class)
     public ApiResponse noHandlerFoundExceptionHandler(NoHandlerFoundException e) {
