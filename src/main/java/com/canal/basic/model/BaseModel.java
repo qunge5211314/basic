@@ -1,20 +1,23 @@
 package com.canal.basic.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.sql.Date;
-import io.swagger.annotations.ApiModelProperty;
 
 @Data
 @SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 public abstract class BaseModel implements Serializable {
     private Long id;
 
-    private Boolean isValid = true;
+    private Boolean is_valid = true;
 
-    private Date createTime;
+    private Date create_time;
 
-    private Date updateTime;
+    private Date update_time;
 }

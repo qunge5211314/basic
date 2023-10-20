@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -29,13 +30,13 @@ public class UserServiceImpl implements UserService {
 
     public void addSysUser(AddUserVO addUserVO) {
         // 判断是否有重复ID的用户
-        SysUser existSysUser = userMapper.findByIdentity(addUserVO);
-        if (!Objects.isNull(existSysUser)) {
+        List<SysUser> byIdentity = userMapper.findByIdentity(addUserVO.getIdentity());
+        if (!byIdentity.isEmpty()) {
             throw new DataConflictException("ID已存在");
         }
         SysUser sysUser = userConverter.addUserVOToUserModel(addUserVO);
         sysUser.setPwd(md5Util.encrypt(defaultPwd));
-        sysUser.setIsSys(false);
+        sysUser.setIs_sys(false);
         userMapper.addSysUser(sysUser);
     }
 }

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.canal.basic.mapper.UserMapper">
+
     <select id="findByIdentity" resultType="com.canal.basic.model.SysUser">
         SELECT *
         from sys_user
-        WHERE is_valid = true
+        WHERE is_valid = 1
           and identity = #{identity}
     </select>
 
     <insert id="addSysUser">
         insert into sys_user (username, identity, email, pwd, gender, state, is_sys)
-        values (#{userName}, #{identity}, #{email}, #{pwd}, ${gender}, ${state}, ${isSys})
+        values (#{username}, #{identity}, #{email}, #{pwd}, ${gender}, ${state}, ${is_sys})
     </insert>
 
 

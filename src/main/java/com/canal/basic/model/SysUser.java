@@ -1,16 +1,20 @@
 package com.canal.basic.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
 @Data
 @SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 public class SysUser extends BaseModel implements Serializable {
 
-    private String userName;
+    private String username;
 
     private String identity;
 
@@ -22,5 +26,5 @@ public class SysUser extends BaseModel implements Serializable {
 
     private Boolean state;
 
-    private Boolean isSys;
+    private Boolean is_sys = false;
 }

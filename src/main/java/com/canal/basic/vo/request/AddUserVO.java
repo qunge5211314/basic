@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @ApiModel("添加用户数据")
 public class AddUserVO {
     @ApiModelProperty(value = "姓名", required = true)
-    private String userName;
+    private String username;
     @ApiModelProperty(value = "ID", required = true)
     private String identity;
     @ApiModelProperty(value = "邮箱", required = true)
