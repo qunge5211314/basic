@@ -14,6 +14,18 @@
         values (#{username}, #{identity}, #{email}, #{pwd}, ${gender}, ${state}, ${is_sys})
     </insert>
 
+    <select id="getAllUsers" resultType="com.canal.basic.model.SysUser">
+        SELECT *
+        from sys_user where is_valid = true order by create_time desc
+    </select>
+
+    <update id="logicalDeleteUser">
+        update sys_user set is_valid = false WHERE id IN
+        <foreach collection="userIdList" item="userId" open="(" separator="," close=")">
+            #{userId}
+        </foreach>
+    </update>
+
 
 
 </mapper>

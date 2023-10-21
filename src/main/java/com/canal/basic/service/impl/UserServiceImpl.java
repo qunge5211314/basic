@@ -39,4 +39,17 @@ public class UserServiceImpl implements UserService {
         sysUser.setIs_sys(false);
         userMapper.addSysUser(sysUser);
     }
+
+    @Override
+    public List<SysUser> getAllUsers() {
+        List<SysUser> users = userMapper.getAllUsers();
+        return users;
+    }
+
+    @Override
+    public void logicalDeleteUser(List<Long> userIdList) {
+        userMapper.logicalDeleteUser(userIdList);
+    }
+
+
 }
